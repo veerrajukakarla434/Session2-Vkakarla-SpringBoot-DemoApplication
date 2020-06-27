@@ -1,8 +1,8 @@
-package com.vkakarla.springboot.rest.demo.service;
+package com.vkakarla.springboot.demo.service;
 
 import java.util.List;
 
-import com.vkakarla.springboot.rest.demo.model.Employee;
+import com.vkakarla.springboot.demo.model.Employee;
 
 public interface EmployeeService {
     

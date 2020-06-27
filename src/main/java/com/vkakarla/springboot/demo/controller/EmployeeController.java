@@ -1,4 +1,4 @@
-package com.vkakarla.springboot.rest.demo.controller;
+package com.vkakarla.springboot.demo.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vkakarla.springboot.rest.demo.model.Employee;
-import com.vkakarla.springboot.rest.demo.service.EmployeeService;
+import com.vkakarla.springboot.demo.model.Employee;
+import com.vkakarla.springboot.demo.service.EmployeeService;
 
 @RestController
 public class EmployeeController {
@@ -19,7 +19,7 @@ public class EmployeeController {
 	EmployeeService employeeService;
 
 	@GetMapping("/employee/{empId}")
-	public ResponseEntity<Object> getEmployee(@PathVariable String empId) throws Exception {
+	public ResponseEntity<Object> getEmployee(@PathVariable String empId){
 
 		Employee employeeResponse = employeeService.getEmployeeByEmpId(empId);
 
@@ -27,7 +27,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/employees")
-	public ResponseEntity<Object> getAllEmployees() throws Exception {
+	public ResponseEntity<Object> getAllEmployees(){
 		
 		 List<Employee> empResponse = employeeService.getAllEmployees();
 

@@ -1,4 +1,4 @@
-package com.vkakarla.springboot.rest.demo.model;
+package com.vkakarla.springboot.demo.model;
 
 public class Employee {
 

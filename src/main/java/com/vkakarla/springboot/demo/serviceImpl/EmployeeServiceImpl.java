@@ -1,18 +1,19 @@
-package com.vkakarla.springboot.rest.demo.serviceImpl;
+package com.vkakarla.springboot.demo.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.vkakarla.springboot.rest.demo.model.Employee;
-import com.vkakarla.springboot.rest.demo.service.EmployeeService;
+import com.vkakarla.springboot.demo.model.Employee;
+import com.vkakarla.springboot.demo.service.EmployeeService;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee getEmployeeByEmpId(String empId) {
+		
 		Employee employee = new Employee();
 		employee.setEmpId(empId);
 		employee.setFirstName("Verr");
