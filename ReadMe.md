@@ -1,6 +1,5 @@
 # Spring Boot Demo Application 
 
-
 #### What Is Spring Or Spring framework ?
 
 * Spring framework is the most widely used Java framework for building application. Spring framework has a lot of projects to develop java application.
@@ -12,13 +11,23 @@
 * **Spring ORM**
 * **Spring data**
 
-![Spring-Modules](https://github.com/veerrajukakarla434/Vkakarla2-SpringBoot-DemoApplication/blob/master/src/images/Spring-Modules.png)
-
-
 ## Why do we need Spring Boot? 
 
 * Spring based applications have a lot of configuration.
 * When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things.
+
+* **Main Goal of Spring Boot:**
+* The main goal of Spring Boot Framework is to reduce Development, Unit Test and Integration Test time and to ease the development of Production ready web applications very easily compared to existing Spring Framework, which really takes more time.
+
+  * To avoid XML Configuration completely
+  * To avoid defining more Annotation Configuration(It combined some existing Spring Framework Annotations to a simple and single Annotation)
+  * To avoid writing lots of import statements
+  * To provide some defaults to quick start new projects within no time.
+  * To provide Opinionated Development approach.
+  * By providing or avoiding these things, Spring Boot Framework reduces Development time, Developer Effort and increases productivity.
+  * It provides Embedded HTTP servers like Tomcat, Jetty etc. to develop and test our web applications very easily.
+  * It provides lots of plugins to work with embedded and in-memory Databases very easily.
+  
 
 * **Spring Based Configurations :**
 * **Web.xml :**
@@ -38,35 +47,31 @@
 ```
 * **Servlet.xml for components as well Data Base connections**
 ``` Java
-<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+                           
+     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
         destroy-method="close">
         <property name="driverClass" value="${db.driver}" />
         <property name="jdbcUrl" value="${db.url}" />
         <property name="user" value="${db.username}" />
         <property name="password" value="${db.password}" />
-    </bean>
+     </bean>                      
 
-    <jdbc:initialize-database data-source="dataSource">
-        <jdbc:script location="classpath:config/schema.sql" />
-        <jdbc:script location="classpath:config/data.sql" />
-    </jdbc:initialize-database>
-
-    <bean
-        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-        id="entityManagerFactory">
-        <property name="persistenceUnitName" value="hsql_pu" />
-        <property name="dataSource" ref="dataSource" />
-    </bean>
-
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory" />
-        <property name="dataSource" ref="dataSource" />
-    </bean>
-
-    <tx:annotation-driven transaction-manager="transactionManager"/>
- <context:annotation-config></context:annotation-config>
+	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="com.veer.spring.mvc.application"></context:component-scan>
 </beans>
+
 ```
 
 * **Dependences**
@@ -99,19 +104,3 @@
   * spring-boot-starter-data-jpa - Spring Data JPA with Hibernate
   * spring-boot-starter-cache - Enabling Spring Framework’s caching support
   * spring-boot-starter-data-rest - Expose Simple REST Services using Spring Data REST
-
-* **Main Goal of Spring Boot:**
-* The main goal of Spring Boot Framework is to reduce Development, Unit Test and Integration Test time and to ease the development of Production ready web applications very easily compared to existing Spring Framework, which really takes more time.
-
-  * To avoid XML Configuration completely
-  * To avoid defining more Annotation Configuration(It combined some existing Spring Framework Annotations to a simple and single Annotation)
-  * To avoid writing lots of import statements
-  * To provide some defaults to quick start new projects within no time.
-  * To provide Opinionated Development approach.
-  * By providing or avoiding these things, Spring Boot Framework reduces Development time, Developer Effort and increases productivity.
-  * It provides Embedded HTTP servers like Tomcat, Jetty etc. to develop and test our web applications very easily.
-  * It provides lots of plugins to work with embedded and in-memory Databases very easily.
-  
-
-
-
