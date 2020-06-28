@@ -16,7 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		Employee employee = new Employee();
 		employee.setEmpId(empId);
-		employee.setFirstName("Verr");
+		employee.setFirstName("Veer");
 		employee.setLastName("Kakarla");
 		employee.setSsn("123-45-6789");
 
@@ -30,19 +30,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 		Employee employee = new Employee();
 		employee.setEmpId("100");
-		employee.setFirstName("Verr");
+		employee.setFirstName("Vkakarla");
 		employee.setLastName("Kakarla");
 		employee.setSsn("123-45-6789");
 
 		Employee employee1 = new Employee();
 		employee1.setEmpId("101");
-		employee1.setFirstName("Raju");
+		employee1.setFirstName("Praveen");
 		employee1.setLastName("Kakarla");
 		employee1.setSsn("123-45-6789");
 
 		Employee employee2 = new Employee();
 		employee2.setEmpId("102");
-		employee2.setFirstName("Prasant");
+		employee2.setFirstName("Suresh");
 		employee2.setLastName("Kakarla");
 		employee2.setSsn("123-45-6789");
 
