@@ -13,9 +13,6 @@
 
 ## Why do we need Spring Boot? 
 
-* Spring based applications have a lot of configuration.
-* When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things.
-
 * **Main Goal of Spring Boot:**
 * The main goal of Spring Boot Framework is to reduce Development, Unit Test and Integration Test time and to ease the development of Production ready web applications very easily compared to existing Spring Framework, which really takes more time.
 
@@ -27,7 +24,9 @@
   * By providing or avoiding these things, Spring Boot Framework reduces Development time, Developer Effort and increases productivity.
   * It provides Embedded HTTP servers like Tomcat, Jetty etc. to develop and test our web applications very easily.
   * It provides lots of plugins to work with embedded and in-memory Databases very easily.
-  
+
+* Spring based applications have a lot of configuration.
+* When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things.
 
 * **Spring Based Configurations :**
 * **Web.xml :**
